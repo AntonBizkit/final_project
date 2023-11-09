@@ -1,823 +1,356 @@
 @font-face {
-  font-family: "OpenSans";
-  src: url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff");
-  font-weight: 400;
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Bold.woff) format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff");
-  font-weight: 700;
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
-*,
-*::after *::before {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Open Sans Regular", sans-serif;
+* {
   margin: 0;
 }
 
-ul,
-ol {
+ul {
+  margin: 0;
   padding: 0;
-  margin: 0;
   list-style-type: none;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-.header {
-  position: relative;
-  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg");
+.page {
+  margin: 0 auto;
+}
+
+.backing {
+  background-image: url(../images/banner-bg.jpg);
   background-repeat: no-repeat;
+  background-position: center top;
   background-size: cover;
+  position: relative;
+  z-index: 0;
 }
 
-.header::after {
+.backing::after {
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: #000000;
   opacity: 0.6;
+  z-index: -1;
 }
 
 .container {
   max-width: 1200px;
-  padding-top: 29px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 145px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
-.top {
+.header {
+  box-sizing: border-box;
+  min-height: 452px;
+  padding: 30px 15px 0 17px;
+}
+
+.menu__bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
 }
 
-.logo-link {
+.logo {
   width: 179px;
 }
 
-.burger {
+.menu__burger {
   display: none;
 }
 
-.menu-list {
+.menu__list {
   display: flex;
-  text-align: center;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  padding-top: 13px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+  color: #fff;
 }
 
-.menu-item:nth-child(n + 2) {
+.list__item {
   margin-left: 35px;
 }
 
-.menu-link {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 13px;
-  text-transform: uppercase;
-}
-
-.pop-up-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.5);
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 2;
-}
-
-._hidden {
-  display: none;
-}
-
-.pop-up-content {
-  box-sizing: border-box;
-  width: 390px;
-  background-color: #fff;
-  position: fixed;
-  padding: 53px 30px;
-}
-
-.popup__close {
-  width: 25px;
-  height: 25px;
-  font-size: 40px;
-
-  position: absolute;
-  top: -45px;
-  right: 0;
-  color: #fff;
-}
-
-button {
-  all: unset;
-  cursor: pointer;
-}
-
-.header-popup {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 20px;
-  margin-bottom: 25px;
-}
-
-.header-popup::after {
-  content: "";
-  width: 66px;
-  height: 3px;
-  background-color: #b59f5b;
-  display: flex;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 12px;
-}
-
-.question {
-  display: block;
-  padding-bottom: 9px;
-  font-size: 13px;
-}
-
-.frequency-area {
-  position: relative;
-}
-.frequency-area::after {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 20px;
-  background-image: url(https://raw.githubusercontent.com/netology-code/mq-diploma/44ce368d08172b8bcfd9e57182932478dd8dc022/sources/svg/form-arrows.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  bottom: 40px;
-  right: 15px;
-}
-.choose-option {
-  width: 100%;
-  height: 47px;
-  background-color: #f4f7f6;
-  border: none;
-  margin-bottom: 25px;
-  padding-left: 19px;
-  color: #707171;
-  font-size: 13px;
-  appearance: none;
-  cursor: pointer;
-}
-
-.email-area {
-  margin-bottom: 25px;
-}
-
-.choose {
-  position: relative;
-  font-size: 13px;
-  margin-right: 17px;
-}
-
-.radio-check {
-  appearance: none;
-  padding-left: 20px;
-}
-
-.radio-text::before {
-  content: "";
-  position: absolute;
-  width: 17px;
-  height: 17px;
-  background-image: url(https://raw.githubusercontent.com/netology-code/mq-diploma/44ce368d08172b8bcfd9e57182932478dd8dc022/sources/svg/form-empty-circle.svg);
-  top: 0;
-  left: 0;
-  cursor: pointer;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.radio-check:checked ~ .radio-text::before {
-  background-image: url(https://raw.githubusercontent.com/netology-code/mq-diploma/44ce368d08172b8bcfd9e57182932478dd8dc022/sources/svg/form-circle.svg);
-}
-
-.text-area {
-  resize: none;
-  width: 330px;
-  height: 130px;
-  background-color: #f4f7f6;
-  border: none;
-  padding-left: 19px;
-  padding-top: 19px;
-  color: #707171;
-  font-size: 13px;
-}
-
-.popup-button {
-  margin-top: 24px;
-  width: 100%;
-  height: 48px;
-  border: none;
-  color: #fff;
-  background-color: #b59f5b;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.trends-header {
-  text-align: center;
-  color: black;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 20px;
-  margin: 60px 0 40px;
-}
-
-.trends-header::after {
-  content: "";
-  width: 66px;
-  height: 3px;
-  background-color: #b59f5b;
-  display: flex;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 14px;
-}
-
-.trends-gallery {
-  display: flex;
-}
-
-.trend-article {
-  display: flex;
-  width: 25%;
-  min-height: 310px;
-  background-color: #eff6f1;
-}
-
-.trend-article:nth-child(n + 2) {
-  margin: 0 2px;
-}
-
-.trend-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  padding: 17px 19px;
-  position: relative;
-}
-
-.trend-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #000;
-  opacity: 0.6;
-}
-
-.trand-1 {
-  background-image: url(https://github.com/netology-code/mq-diploma/blob/master/sources/img/trend1.jpg?raw=true);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.trand-2 {
-  background-image: url(https://github.com/netology-code/mq-diploma/blob/master/sources/img/trend2.jpg?raw=true);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.trand-3 {
-  background-image: url(https://github.com/netology-code/mq-diploma/blob/master/sources/img/trend3.jpg?raw=true);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.trand-4 {
-  background-image: url(https://github.com/netology-code/mq-diploma/blob/master/sources/img/trend4.jpg?raw=true);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.trend-content {
-  border: solid #847b3e 3px;
-  padding: 38px;
-  max-height: 320px;
-
-  z-index: 1;
-}
-
-.tegs_item_link {
-  text-decoration: none;
-  color: #b59f5b;
-  font-weight: 700;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-top: 3px;
-  margin-right: 19px;
-}
-
-.trend-link {
-  text-decoration: none;
-  color: #fff;
-  font-size: 20px;
-  text-transform: uppercase;
-  margin-top: 7px;
+.item__link:hover {
+  text-decoration: underline;
 }
 
 .title {
-  width: 679px;
-  margin: 145px auto 0;
-  text-align: center;
-  color: #ffffff;
+  max-width: 710px;
+  margin: 101px auto 0;
+}
+
+.heading {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
   text-transform: uppercase;
-  font-size: 43px;
-  line-height: 75px;
+  font-size: 45px;
+  line-height: 1.6;
+  text-align: center;
+  color: #fff;
 }
 
-.content {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 64px 15px;
+.preview {
+  margin-top: 53px;
 }
 
-.article {
-  display: flex;
-  justify-content: space-between;
-  max-width: 778px;
-  margin-bottom: 58px;
-}
-.article:last-child {
-  margin-bottom: 0px;
-}
-
-.article-png {
-  position: relative;
-  width: 381px;
-  margin-right: 30px;
-}
-
-.article-list {
-  display: flex;
-}
-
-.article-item {
-  margin-right: 20px;
-}
-
-.article-link {
-  text-decoration: none;
-  color: #b59f5b;
-  font-weight: 700;
+.subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
   font-size: 14px;
   text-transform: uppercase;
+  text-align: center;
 }
 
-.title-main {
-  text-transform: uppercase;
-  margin-bottom: 37px;
-  text-decoration: none;
-  color: #0f0d0e;
+.subtitle::after {
+  content: "";
+  display: block;
+  width: 66px;
+  margin: 12px auto 0;
+  border-bottom: 3px solid #b59f5b;
+}
+
+.main__title {
   font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
 }
 
-.title-main:hover {
+.row {
+  display: flex;
+  gap: 4px;
+  margin: 29px 0 0;
+}
+
+.row__post {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  padding: 0 20px 15px;
+  width: 25%;
+  min-height: 320px;
+  box-sizing: border-box;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.row__post::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.row__post-garden {
+  background-image: url(../images/trend1.jpg);
+}
+
+.row__post-info {
+  box-sizing: border-box;
+  padding: 37px;
+  border: 3px solid rgba(181, 159, 91, 0.6);
+}
+
+.post__tags {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+  text-transform: uppercase;
   color: #b59f5b;
 }
 
-.h2 {
-  margin-bottom: 15px;
+.tags {
+  margin-left: 14px;
 }
 
-.date {
-  font-size: 12px;
-  line-height: 40px;
+.tags:hover {
+  text-decoration: underline solid #b59f5b;
+}
+
+.tags__first:hover {
+  text-decoration: underline solid #b59f5b;
+}
+
+.row__post-cheese {
+  background-image: url(../images/trend2.jpg);
+}
+
+.row__post-journey {
+  background-image: url(../images/trend3.jpg);
+}
+
+.row__post-lemon {
+  background-image: url(../images/trend4.jpg);
+}
+
+.post__caption {
+  margin-bottom: 27px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.post__caption:hover {
+  color: #b59f5b;
+}
+
+.column {
+  margin: 0;
+  color: #ffffff;
+}
+
+.page__main {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 120px;
+  padding: 0 15px;
+}
+
+.post {
+  display: flex;
+  margin: 61px 0 61px;
+}
+
+.post__preview {
+  width: 50%;
+}
+
+.post__art {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.post__info {
+  width: 50%;
+  margin-left: 30px;
+}
+
+.post__meta {
+  margin-bottom: 46px;
+}
+
+.meta__data {
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
   color: #888888;
 }
 
-.author {
+.meta__author {
+  margin-left: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
   font-size: 12px;
-  line-height: 40px;
-  display: inline;
-  font-weight: 700;
-  margin-left: 15px;
-  color: black;
 }
 
-.text {
-  width: 367px;
-  height: 62px;
-  font-size: 15px;
-  line-height: 22px;
-  color: #0f0d0e;
+.post__description {
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  margin-top: 30px;
-  overflow: hidden;
-}
-
-.text > p {
+  font-style: normal;
   font-size: 15px;
-  line-height: 22px;
-  margin: 0;
+  line-height: 1.5;
 }
 
-.text > p:not(:first-child) {
-  margin-top: 16px;
+.lead {
+  margin-top: 6px;
 }
 
 .sidebar {
   width: 272px;
+  margin-top: 58px;
 }
 
-.new-post {
+.new__posts {
+  margin-bottom: 59px;
+}
+
+.last__news {
+  margin-top: 23px;
+}
+
+.small__post {
   display: flex;
-  flex-direction: column;
 }
 
-.title-sidebar {
+.small__preview {
+  margin-right: 18px;
+  width: 71px;
+  height: 70px;
+}
+
+.small__art {
+  object-fit: cover;
+  object-position: center;
+}
+
+.small__text {
+  min-width: 181px;
+}
+
+.small__caption {
+  margin-top: 4px;
+  margin-bottom: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
   font-size: 14px;
-  line-height: 29px;
-  color: #0f0d0e;
-  font-weight: 700;
+  line-height: 1.1;
   text-transform: uppercase;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.title-sidebar:after {
-  content: " ";
-  display: block;
-  border: 1px solid #e1d9bd;
-  width: 66px;
-  height: 1px;
-  background-color: #e1d9bd;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
-}
-
-.sidebar-content1 {
-  display: flex;
-  margin-bottom: 0px;
-  margin-top: 25px;
-}
-
-.sidebar-text {
-  font-size: 14px;
-  line-height: 14px;
-  color: #000000;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.sidebar-text:hover {
-  font-size: 14px;
-  line-height: 14px;
+.small__caption:hover {
   color: #b59f5b;
-  font-weight: 700;
 }
 
-a {
-  color: inherit;
+.search {
+  margin-bottom: 56px;
 }
 
-.new-post-png {
-  width: 70px;
-  margin-right: 23px;
-}
-
-.sidebar-content {
-  margin-top: -10px;
-}
-
-.date-sidebar {
-  font-size: 12px;
-  line-height: 10px;
-  color: #000000;
-  font-weight: 400;
-}
-
-.form {
+.form__search {
   display: flex;
-  justify-content: space-between;
-  margin-top: 60px;
   width: 272px;
-  height: 48px;
-
-  margin-bottom: 61px;
-}
-
-.search_txt {
-  display: flex;
-  height: 48px;
-  width: 224px;
-  border: none;
-  background-color: #f4f7f6;
-  padding: 18px;
-  outline: none;
-}
-
-.button_search {
-  display: flex;
-  width: 48px;
-  height: 48px;
-  background: #b59f5b;
-  border: none;
-  cursor: pointer;
-
-  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/search.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 18px;
-}
-
-.form_subscribe {
-  width: 100%;
-}
-
-.txt_subscribe {
-  height: 30px;
-  width: 93%;
-  border: none;
-  background-color: #f4f7f6;
-  padding: 10px;
-  outline: none;
-}
-
-.send_btn {
-  width: 100%;
-  height: 48px;
-  background: #b59f5b;
-  border: none;
-  cursor: pointer;
-  margin: 17px 0 62px 0;
-
-  color: #fff;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.title-tag-aside {
-  font-size: 14px;
-  line-height: 29px;
-  color: #0f0d0e;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.title-tag-aside:after {
-  content: " ";
-  display: block;
-  border: 1px solid #e1d9bd;
-  width: 66px;
-  height: 1px;
-  background-color: #e1d9bd;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
-  margin-bottom: 25px;
-}
-
-.tag-menu-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tag-item {
-  list-style-type: none;
-  margin: 4px 4px 0 0;
-}
-
-.tag-menu-link {
-  text-decoration: none;
-  font-size: 12px;
-  color: #0f0d0e;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: 3px solid #eeeeee;
-  display: block;
-  padding: 6px 12px;
-}
-
-.tag-menu-link:hover {
-  border-color: #b59f5b;
-}
-
-.tag-aside {
-  margin-bottom: 60px;
-}
-
-.topic-menu-list {
-  list-style-type: none;
-}
-.topic-menu-link {
-  text-decoration: none;
-  font-size: 14px;
-  line-height: 47px;
-  color: #000000;
-  font-weight: 700;
-}
-.topic-menu-link:hover {
-  font-size: 14px;
-  line-height: 47px;
-  color: #b59f5b;
-  font-weight: 700;
-}
-.box-topic {
-  width: 271px;
-  height: 1px;
-  background-color: #eeeeee;
-}
-.topic-text {
-  font-size: 12px;
-  line-height: 36px;
-  color: #b59f5b;
-  font-weight: 700;
-  margin-left: 2px;
-  vertical-align: top;
-}
-
-.sup {
-  vertical-align: super;
-  color: #b59f5b;
-}
-
-.shop {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.our-craft {
-  margin: auto;
-  text-transform: uppercase;
-}
-
-.our-craft::after {
-  content: "";
-  display: flex;
-  width: 67px;
-  height: 3px;
-  background: #e1d9bd;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 14px;
-}
-
-.shop-container {
-  display: flex;
-}
-
-.craft-item-card {
-  width: 33.33%;
-  margin: 29px 56px 84px;
-  display: flex;
-  flex-direction: column;
-}
-
-.craft-img {
-  display: block;
-  max-width: 100%;
-  height: 204px;
-  background-color: grey;
-}
-
-.craft-container {
-  display: flex;
-  flex-direction: column;
-  outline-offset: 20px;
-  outline: 3px solid #d3c59d;
-  flex-grow: 1;
-}
-
-.craft-name {
-  text-transform: uppercase;
-  font-size: 20px;
-  padding-top: 18px;
-}
-
-.cradt-dscrt {
-  font-size: 15px;
-}
-
-.craft-link {
-  text-decoration: none;
-  color: #b59f5b;
-}
-
-.about-price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 27px;
-}
-
-.old-price {
-  font-size: 14px;
-  text-decoration: line-through;
-  font-weight: bold;
-}
-
-.new-price {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.line-through {
-  text-decoration: line-through;
-}
-
-.in-shop {
-  width: 140px;
-  height: 48px;
-  border: none;
-  background-color: #b59f5b;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #ffffff;
-  border-top: 1px solid #e1d9bd;
-}
-
-.in-shop:hover {
-  cursor: pointer;
-}
-
-.footer {
-  flex-direction: column;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto 41px;
-}
-
-.contacts {
-  display: flex;
-  background-color: #f4f7f6;
-  align-items: center;
-  justify-content: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
-.contact__logo-link {
-  margin: 0;
-}
-
-.contacts__logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style-type: none;
-}
-
-.dribbble {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg);
-  display: block;
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-  margin-right: 30px;
-}
-.pinterest {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg);
-  display: block;
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-  margin-right: 30px;
-}
-.tumblr {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg);
-  display: block;
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-  margin-right: 30px;
 }
 
 .visually-hidden {
@@ -825,494 +358,813 @@ a {
   width: 1px;
   height: 1px;
   margin: -1px;
-  border: 0;
   padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
+  border: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
 
-.copyrights {
-  text-align: center;
-  margin-top: 75px;
-  margin-bottom: 45px;
+.field {
+  box-sizing: border-box;
+  width: 223px;
+  height: 48px;
+  padding: 19px;
+  background-color: #f4f7f6;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  border: none;
 }
 
-.footer__link {
-  text-decoration: none;
+.field:focus {
+  outline: 1px solid #b59f5b;
+  outline-offset: -1px;
+}
+
+.btn__search {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background-color: #b59f5b;
+}
+
+.btn__search:hover {
+  background-color: #323232;
+}
+
+.btn__art {
+  display: block;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+}
+
+.subscription {
+  margin-bottom: 57px;
+}
+
+.group__field {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f4f7f6;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  border: none;
+}
+
+.group__field:focus {
+  outline: 1px solid #b59f5b;
+  outline-offset: -1px;
+}
+
+.field__email {
+  height: 48px;
+  margin-top: 22px;
+  padding: 19px;
+}
+
+.group__btn {
+  width: 100%;
+  height: 48px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  color: #ffffff;
+  background-color: #b59f5b;
+}
+
+.group__btn:hover {
+  background-color: #323232;
+}
+
+.btn__email {
+  margin-top: 17px;
+}
+
+.link {
+  margin-bottom: 54px;
+}
+
+.link__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+
+.wrap {
+  box-sizing: border-box;
+  height: 26px;
+  margin-right: 5px;
+  margin-bottom: 8px;
+  padding: 0 15px;
+  text-align: center;
+  border: 3px solid #f4f3f1;
+}
+
+.wrap:hover {
+  border: 3px solid #b59f5b;
+}
+
+.tags__link {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
   font-size: 12px;
-  color: #999999;
-  font-weight: 700;
-  font-family: "openSans";
+  text-transform: uppercase;
+}
+
+.topic__list {
+  margin-top: 21px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.topic__item {
+  margin-bottom: 12px;
+}
+
+.topic__item:after {
+  content: "";
+  display: block;
+  margin: 13px auto 0;
+  width: 272px;
+  border: 1px solid #eeeeee;
+}
+
+.topic__link:hover {
+  color: #b59f5b;
+}
+
+.sup {
+  margin-left: 2px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 12px;
+  color: #b59f5b;
+  vertical-align: 2px;
+}
+
+.products__cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 26px 0 66px;
+  padding: 0 38px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.features {
+  flex-grow: 1;
+  box-sizing: border-box;
+  margin: -35px -23px 0;
+  padding: 28px 19px;
+  border: 3px solid #b59f5b;
+}
+
+.product__name {
+  margin: 19px 0 5px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.product__description {
+  margin-bottom: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.description__link {
+  color: #b59f5b;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product__price {
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.product__price-old {
+  margin-bottom: -5px;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.btn__shop {
+  width: 140px;
+  height: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #b59f5b;
+  border: none;
+}
+
+.btn__shop:hover {
+  background-color: #323232;
+}
+
+.popup__hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.popup__wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.popup__window {
+  position: relative;
+  width: 390px;
+  padding: 45px 30px 55px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.popup__close {
+  position: absolute;
+  top: -26px;
+  left: 374px;
+  padding: 0;
+  font-size: 0;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.popup__close:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../svg/form-x.svg);
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+.popup__form {
+  margin-top: 26px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.group__hint {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+}
+
+.popup__dropdown {
+  appearance: none;
+  width: 100%;
+  height: 48px;
+  margin: 10px 0 30px;
+  padding: 0 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #9b9c9c;
+  background-image: url(../svg/form-arrows.svg);
+  background-repeat: no-repeat;
+  background-size: 9px;
+  background-position: right 14px center;
+}
+
+.radio__group {
+  margin-bottom: 30px;
+}
+
+.radio__wrap {
+  flex-wrap: nowrap;
+  margin-top: 5px;
+}
+
+.radio__inner-yes {
+  margin-right: 17px;
+}
+
+.radio__btn {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+}
+
+.radio__btn:checked + .radio__var::before {
+  background-image: url(../svg/form-circle.svg);
+}
+
+.radio__var::before {
+  margin-right: 5px;
+}
+
+.radio__var::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  background-image: url(../svg/form-empty-circle.svg);
+  background-repeat: no-repeat;
+  background-size: 18px;
+}
+
+.comment__group {
+  margin-bottom: 20px;
+}
+
+.comment__field {
+  resize: none;
+  width: 100%;
+  height: 131px;
+  margin-top: 10px;
+  padding: 15px 22px 10px;
+}
+
+.footer {
+  padding: 0 15px;
+}
+
+.social {
+  box-sizing: border-box;
+  padding: 32px 0;
+  background-color: #f4f7f6;
+}
+
+.social__list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.social__item:not(:last-child) {
+  margin-right: 25px;
+}
+
+.social__link {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.copy {
+  margin-top: 65px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-@media (min-width: 641px) and (max-width: 1200px) and (orientation: portrait) {
-  body {
-    max-width: 1200px;
+.text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: -0.4px;
+  color: #999999;
+}
+
+@media (max-width: 1200px) {
+  .menu__burger {
+    display: block;
+    margin-top: -5px;
+    width: 24px;
+    text-align: center;
   }
+
   .menu {
     display: none;
   }
 
-  .container {
-    padding: 43px 35px 124px;
-  }
-  .burger {
-    display: block;
-    cursor: pointer;
-  }
-  .trends-content {
-    max-width: 100%;
-  }
-  .trends-gallery {
+  .row {
     flex-wrap: wrap;
-    max-width: 100%;
-    justify-content: space-between;
   }
 
-  .trend-article {
-    width: calc(50% - 4px);
-    margin: 4px 0;
+  .post {
+    flex-wrap: wrap;
   }
 
-  .content {
-    padding: 50px 34px;
-  }
-  .page {
-    max-width: 70%;
-  }
-
-  .article {
-    flex-direction: column;
-    max-width: 100%;
-    margin-bottom: 44px;
-    border-bottom: solid 4px #eeeeee;
-  }
-
-  .article-png {
-    max-width: 100%;
-    margin: 0;
-  }
-
-  .article-img {
+  .post__preview {
     width: 100%;
   }
 
-  .article-list {
-    margin: 17px 0;
-  }
-
-  .title_main {
-    margin-top: 0;
-    line-height: 25px;
-  }
-
-  .article_meta {
-    margin-bottom: 37px;
-  }
-
-  .text {
-    margin-bottom: 15px;
-  }
-  .sidebar {
-    margin-left: 33px;
-  }
-
-  .shop-container {
-    flex-wrap: wrap;
-    margin-left: 57px;
-    margin-right: 57px;
-    justify-content: space-between;
-  }
-  .craft-item-card {
-    width: calc(50% - 34px);
+  .post__info {
+    width: 100%;
     margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 31px;
+    margin-top: 6px;
   }
 
-  .footer {
-    margin-top: 45px;
+  .products__cards {
+    flex-wrap: wrap;
   }
 
-  .footer__link {
-    font-weight: bold;
+  .product__name {
+    font-size: 17px;
+  }
+
+  .radio__var::before {
+    width: 25px;
+    height: 25px;
+    background-size: 25px;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
-  body {
-    max-width: 1200px;
+  .row__post {
+    width: calc((100% - (4px * 3)) / 4);
+    height: 320px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1200px) {
+  .backing {
+    background-image: url(../images/banner-bg-tablet.jpg);
+    background-position: center;
   }
 
-  .menu {
-    display: none;
+  .header {
+    min-height: 0;
+    padding: 45px 35px 108px;
   }
 
-  .container {
-    padding: 43px 35px 124px;
+  .logo {
+    width: 158px;
   }
 
-  .burger {
+  .title {
+    width: 620px;
+    margin: 80px auto 0;
+  }
+
+  .heading {
+    font-size: 40px;
+    line-height: 1.5;
+  }
+
+  .preview {
+    margin-top: 42px;
+  }
+
+  .main__title {
+    font-size: 18px;
+  }
+
+  .row {
+    margin: 17px 0 0;
+  }
+
+  .row__post {
+    width: calc((100% - 4px) / 2);
+    height: 246px;
+  }
+
+  .row__post-info {
+    padding: 30px 30px 0 28px;
+  }
+
+  .post__caption {
+    font-size: 17px;
+    margin-bottom: 32px;
+  }
+
+  .page__main {
+    gap: 34px;
+    padding: 0 34px;
+  }
+
+  .post {
+    margin: 0 0 42px;
+  }
+
+  .post__first {
+    margin-top: 51px;
+  }
+
+  .tags {
+    margin-left: 19px;
+  }
+
+  .post__meta {
+    margin-bottom: 27px;
+  }
+
+  .post:not(:last-child):after {
+    content: "";
     display: block;
-    cursor: pointer;
+    width: 100%;
+    margin-top: 19px;
+    border-bottom: 3px solid #eeeeee;
   }
 
-  .trend-content {
-    padding: 7%;
+  .sidebar {
+    margin-top: 47px;
   }
 
-  .trend-link {
-    font-size: 1.5vw;
-  }
-
-  .content {
-    padding: 50px 34px;
-  }
-
-  .page {
-    max-width: 70%;
-  }
-
-  .article {
+  .products {
+    display: flex;
     flex-direction: column;
-    max-width: 100%;
-    margin-bottom: 44px;
-    border-bottom: solid 4px #eeeeee;
+    align-items: center;
+    margin-top: 14px;
   }
 
-  .article-png {
-    max-width: 100%;
-    margin: 0;
+  .products__cards {
+    max-width: 698px;
+    margin: 26px 0 50px;
   }
 
-  .article-img {
+  .card:nth-child(odd) {
+    margin-right: 68px;
+  }
+
+  .features {
+    margin: -37px -20px 0;
+    padding: 21px 20px 30px;
+  }
+
+  .product__name {
+    margin: 26px 0 5px;
+  }
+
+  .product__description {
+    margin-bottom: 20px;
+  }
+
+  .popup__close {
+    top: -35px;
+    left: 364px;
+  }
+
+  .popup__close:before {
+    width: 26px;
+    height: 26px;
+    background-size: 26px;
+  }
+
+  .radio__wrap {
+    margin-top: 9px;
+  }
+
+  .radio__inner-yes {
+    margin-right: 30px;
+  }
+
+  .copy {
+    margin-top: 43px;
+  }
+}
+
+@media (max-width: 640px) {
+  .backing {
+    background-image: url(../images/banner-mobile.jpg);
+    background-position: center;
+  }
+
+  .header {
+    padding: 34px 15px 210px 17px;
+  }
+
+  .menu__bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo__link {
+    order: 1;
+  }
+
+  .logo {
+    width: 269px;
+    margin-top: 172px;
+  }
+
+  .menu__burger {
+    align-self: end;
+  }
+
+  .title {
+    max-width: 710px;
+    margin: 30px auto 0;
+  }
+
+  .heading {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .preview {
+    margin-top: 39px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .subtitle::after {
+    margin: 8px auto 0;
+  }
+
+  .row {
+    margin: 25px 0 0;
+  }
+
+  .row__post {
+    width: 100%;
+    height: 230px;
+  }
+
+  .row__post-info {
+    padding: 29px 23px 27px 14px;
+  }
+
+  .post__caption {
+    font-size: 16px;
+    margin-bottom: 19px;
+  }
+
+  .page__main {
+    display: block;
+  }
+  .articles {
+    margin-top: 43px;
+  }
+
+  .post {
+    margin: 0 0 34px;
+  }
+
+  .post:after {
+    content: "";
+    display: block;
+    width: 100%;
+    margin-top: 22px;
+    border-bottom: 3px solid #eeeeee;
+  }
+
+  .post__meta {
+    margin-bottom: 14px;
+  }
+
+  .post__description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .new__posts {
+    margin-bottom: 62px;
+  }
+
+  .search {
+    margin-bottom: 45px;
+  }
+
+  .subscription {
+    margin-bottom: 41px;
+  }
+
+  .link {
+    margin-bottom: 26px;
+  }
+
+  .link__tags {
+    margin-top: 29px;
+  }
+
+  .wrap {
+    height: 28px;
+    margin-right: 4px;
+    margin-bottom: 10px;
+    padding: 0 14px;
+  }
+
+  .topic__list {
+    margin-top: 26px;
+  }
+
+  .topic__item {
+    margin-bottom: 13px;
+  }
+
+  .form__search {
     width: 100%;
   }
 
-  .article-list {
-    margin: 17px 0;
+  .search__hidden {
+    width: 100%;
   }
 
-  .title_main {
-    margin-top: 0;
-    line-height: 25px;
+  .field {
+    width: 100%;
   }
 
-  .article_meta {
-    margin-bottom: 37px;
+  .topic__item:after {
+    width: 100%;
   }
 
-  .text {
-    margin-bottom: 15px;
-  }
-  .sidebar {
-    margin-left: 33px;
+  .products__cards {
+    justify-content: center;
+    gap: 23px;
+    margin: 30px 0 0;
   }
 
-  .shop-container {
-    flex-wrap: wrap;
-    margin-left: 57px;
-    margin-right: 57px;
-    justify-content: space-between;
+  .card__footer-sale {
+    align-items: center;
   }
-  .craft-item-card {
-    width: calc(50% - 34px);
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 31px;
+
+  .popup__window {
+    width: 331px;
+    padding: 25px 25px 30px;
+  }
+
+  .popup__close {
+    top: -32px;
+    left: 303px;
+  }
+
+  .popup__close:before {
+    width: 28px;
+    height: 28px;
+    background-size: 28px;
+  }
+
+  .popup__dropdown {
+    margin: 9px 0 30px;
+  }
+
+  .radio__wrap {
+    margin-top: 9px;
+  }
+
+  .radio__inner-yes {
+    margin-right: 30px;
   }
 
   .footer {
-    margin-top: 45px;
+    margin-top: 38px;
   }
 
-  .copyright_link {
-    font-weight: bold;
+  .copy {
+    margin: 43px 0 50px;
   }
 }
 
 @media (max-width: 640px) and (orientation: landscape) {
-  .header {
-    background-position: -650px;
-  }
-
-  .top {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .logo-img {
-    width: 100%;
-    padding-top: 172px;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  .container {
-    padding: 43px 35px 124px;
-  }
-
-  .burger {
-    display: block;
-    cursor: pointer;
-    order: -1;
-    align-self: end;
-  }
-  .title {
-    margin: 44px 0;
-    width: 100%;
-    font-size: 26px;
-  }
-
-  .trends-gallery {
-    flex-wrap: wrap;
-    max-width: 100%;
-    justify-content: space-between;
-  }
-
-  .trend-article {
-    width: calc(50% - 4px);
-    margin: 4px 0;
-  }
-
-  .trend-link {
-    font-size: 16px;
-  }
-
-  .content {
-    flex-direction: column;
-    padding: 44px 15px;
-  }
-
-  .article {
-    flex-direction: column;
-    width: 100%;
-    border-bottom: solid 4px #eeeeee;
-    margin-bottom: 35px;
-  }
-  .article-png {
-    margin-right: 0;
-    min-width: 100%;
-  }
-
-  .article-img {
-    width: 100%;
-  }
-
-  .article_content {
-    margin-top: 16px;
-    justify-content: space-between;
-  }
-  .title_article_link {
-    font-size: 16px;
-    line-height: 14px;
-  }
-  .title_main {
-    margin-top: 16px;
-    margin-bottom: 0;
-  }
-  .article_meta {
-    margin: 20px 0;
-  }
-  .text {
-    margin-bottom: 24px;
-  }
-  .text {
-    margin-bottom: 0;
-  }
-  .text-2 {
-    margin-bottom: 15px;
-  }
-  .sidebar {
-    margin-left: 0;
-    width: 100%;
-    margin-top: 44px;
-  }
-  .title-sidebar {
-    font-size: 16px;
-  }
-  .search_txt {
-    width: 100%;
-  }
-  .title-tag-aside {
-    font-size: 16px;
-  }
-
-  .tag-item {
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .our-craft {
-    font-size: 16px;
-  }
-  .shop-container {
-    flex-wrap: wrap;
-  }
-  .craft-item-card {
-    width: 100%;
-    margin: 29px 56px 25px;
-  }
-
-  .footer {
-    padding-top: 43px;
-  }
-
-  .contacts__logo {
-    padding: 42px 0;
-  }
-  .copyright {
-    margin-top: 51px;
-    font-weight: bold;
-  }
-}
-
-@media (max-width: 640px) and (orientation: portrait) {
-  .header {
-    background-position: -650px;
-  }
-
-  .top {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .logo-img {
-    width: 100%;
-    padding-top: 172px;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  .container {
-    padding: 43px 35px 124px;
-  }
-
-  .burger {
-    display: block;
-    cursor: pointer;
-    order: -1;
-    align-self: end;
-  }
-  .title {
-    margin: 44px 0;
-    width: 100%;
-    font-size: 26px;
-  }
-
-  .trend-content {
-    padding: 30px 23px;
-  }
-  .trends-gallery {
-    display: block;
-    max-width: 100%;
-    justify-content: space-between;
-  }
-
-  .trend-article {
-    width: 100%;
-    margin: 3px 0;
-  }
-
-  .trend-link {
-    font-size: 16px;
-  }
-
-  .content {
-    flex-direction: column;
-    padding: 44px 15px;
-  }
-
-  .article {
-    flex-direction: column;
-    width: 100%;
-    border-bottom: solid 4px #eeeeee;
-    margin-bottom: 35px;
-  }
-
-  .article-png {
-    margin-right: 0;
-    min-width: 100%;
-  }
-
-  .article-img {
-    width: 100%;
-  }
-  .article_content {
-    margin-top: 16px;
-    justify-content: space-between;
-  }
-  .title_article_link {
-    font-size: 16px;
-    line-height: 14px;
-  }
-  .title_article {
-    margin-top: 16px;
-    margin-bottom: 0;
-  }
-  .article_meta {
-    margin: 20px 0;
-  }
-  .text {
-    margin-bottom: 24px;
-  }
-  .text {
-    margin-bottom: 0;
-  }
-  .text-2 {
-    margin-bottom: 15px;
-  }
-  .sidebar {
-    margin-left: 0;
-    width: 100%;
-    margin-top: 44px;
-  }
-  .title-sidebar {
-    font-size: 16px;
-  }
-  .search_txt {
-    width: 100%;
-  }
-  .title-tag-aside {
-    font-size: 16px;
-  }
-
-  .teg_title {
-    font-size: 16px;
-  }
-
-  .tag-item {
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .our-craft {
-    font-size: 16px;
-  }
-  .shop-container {
-    flex-wrap: wrap;
-  }
-  .craft-item-card {
-    width: 100%;
-    margin: 29px 56px 25px;
-  }
-
-  .footer {
-    padding-top: 43px;
-  }
-
-  .contacts__logo {
-    padding: 42px 0;
-  }
-  .copyright {
-    margin-top: 51px;
-    font-weight: bold;
+  .row__post {
+    width: calc((100% - 4px) / 2);
   }
 }

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="page">
         <header class="backing">
           <div class="container">
             <div class="header">
@@ -15,13 +14,13 @@
                 <a class="logo__link" href="#0">
                   <img class="logo" src="svg/noemi-logo.svg" alt="Логотип">
                 </a>
-                <svg class="menu__burger" version="1.1" fill="#fff" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                  <title>Menu</title>
-                  <path d="M5.333 22.667h21.333v-2.667h-21.333v2.667zM5.333 17.333h21.333v-2.667h-21.333v2.667zM5.333 9.333v2.667h21.333v-2.667h-21.333z"></path>
-                </svg>
+                <label class="menu__burger">
+                <button class="burger__btn"><span class="visually-hidden">Поле поиска</span>
+              </button>
+                 </label>
                 <nav class="menu">
                   <ul class="menu__list">
-                    <li class="list__first-item">
+                    <li class="list__item">
                       <a class="item__link" href="#0">Главная</a>
                     </li>
                     <li class="list__item">
@@ -47,7 +46,6 @@
               </div>
             </div>
           </header>
-        </div>
         <section class="preview">
             <h2 class="subtitle main__title">Сейчас в тренде</h2>
             <div class="row">
@@ -55,7 +53,7 @@
                 <div class="row__post-info">
                     <ul class="post__tags">
                         <li class="tags__item">
-                        <a class="tags__first" href="#0">Lifestyle</a>
+                        <a class="tags" href="#0">Lifestyle</a>
                         </li>
                         <li class="tags__item">
                         <a class="tags" href="#0">Interior</a>
@@ -70,7 +68,7 @@
                 <div class="row__post-info">
                  <ul class="post__tags">
                      <li class="tags__item">
-                       <a class="tags__first" href="#0">Food</a>
+                       <a class="tags" href="#0">Food</a>
                      </li>
                  </ul>
                  <a class="post__caption-link" href="#0">
@@ -82,7 +80,7 @@
                <div class="row__post-info">
                  <ul class="post__tags">
                      <li class="tags__item">
-                       <a class="tags__first" href="#0">Lifestyle</a>
+                       <a class="tags" href="#0">Lifestyle</a>
                      </li>
                      <li class="tags__item">
                        <a class="tags" href="#0">Travel</a>
@@ -97,7 +95,7 @@
               <div class="row__post-info">
                  <ul class="post__tags">
                      <li class="tags__item">
-                       <a class="tags__first" href="#0">Food</a>
+                       <a class="tags" href="#0">Food</a>
                      </li>
                      <li class="tags__item">
                        <a class="tags" href="#0">Health</a>
@@ -120,7 +118,7 @@
                 <div class="post__info">
                   <ul class="post__tags">
                     <li class="tags__item">
-                      <a class="tags__first" href="#0">Travel</a>
+                      <a class="tags" href="#0">Travel</a>
                     </li>
                     <li class="tags__item">
                       <a class="tags" href="#0">Health</a>
@@ -147,7 +145,7 @@
                 <div class="post__info">
                   <ul class="post__tags">
                     <li class="tags__item">
-                      <a class="tags__first" href="#0">Health</a>
+                      <a class="tags" href="#0">Health</a>
                     </li>
                     <li class="tags__item">
                       <a class="tags" href="#0">Lifestyle</a>
@@ -174,7 +172,7 @@
                 <div class="post__info">
                   <ul class="post__tags">
                     <li class="tags__item">
-                      <a class="tags__first" href="#0">Music</a>
+                      <a class="tags" href="#0">Music</a>
                     </li>
                   </ul>
                   <a class="post__caption-link" href="#0">
@@ -201,7 +199,7 @@
                 <div class="post__info">
                   <ul class="post__tags">
                     <li class="tags__item">
-                      <a class="tags__first" href="#0">Lifestyle</a>
+                      <a class="tags" href="#0">Lifestyle</a>
                     </li>
                     <li class="tags__item">
                       <a class="tags" href="#0">Food</a>
@@ -228,7 +226,7 @@
                 <div class="post__info">
                   <ul class="post__tags">
                     <li class="tags__item">
-                      <a class="tags__first" href="#0">Lifestyle</a>
+                      <a class="tags" href="#0">Lifestyle</a>
                     </li>
                     <li class="tags__item">
                       <a class="tags" href="#0">Interior</a>
@@ -328,9 +326,8 @@
                     <input class="field" type="search" name="query" placeholder="Найти..." required>
                   </label>
                   <label class="btn__hidden">
-                    <span class="visually-hidden">Кнопка поиска</span>
                     <button class="btn__search">
-                    <img class="btn__art" src="svg/search.svg" alt="Поиск">
+                      <span class="visually-hidden">Кнопка поиска</span>
                   </button>
                   </label>
                 </form>
@@ -421,12 +418,10 @@
                   <div class="card__footer card__footer-sale">
                     <div class="product__prices">
                       <span class="product__price product__price-old">
-                        <span class="product__price-value">1000</span>
-                        <span class="product__price-rub">₽</span>
+                        <span class="product__price-value">1000 ₽</span>
                       </span>
                       <span class="product__price">
-                        <span class="product__price-value">800</span>
-                        <span class="product__price-rub">₽</span>
+                        <span class="product__price-value">800 ₽</span>
                       </span>
                     </div>
                     <button class="btn__shop" type="button">В магазин</button>
@@ -446,8 +441,7 @@
                   <div class="card__footer">
                     <div class="product__prices">
                       <span class="product__price">
-                        <span class="product__price-value">3500</span>
-                        <span class="product__price-rub">₽</span>
+                        <span class="product__price-value">3500 ₽</span>
                       </span>
                     </div>
                     <button class="btn__shop" type="button">В магазин</button>
@@ -467,12 +461,10 @@
                   <div class="card__footer card__footer-sale">
                     <div class="product__prices">
                       <span class="product__price product__price-old">
-                        <span class="product__price-value">500</span>
-                        <span class="product__price-rub">₽</span>
+                        <span class="product__price-value">500 ₽</span>
                       </span>
                       <span class="product__price">
-                        <span class="product__price-value">400</span>
-                        <span class="product__price-rub">₽</span>
+                        <span class="product__price-value">400 ₽</span>
                       </span>
                     </div>
                     <button class="btn__shop" type="button">В магазин</button>
@@ -521,21 +513,18 @@
             <address class="social">
               <ul class="social__list">
                 <li class="social__item">
-                  <a class="social__link" href="#0">
+                  <a class="social__link" id="dribbble" href="#0">
                     <span class="visually-hidden">Dribbble</span>
-                    <img class="social__link-dribbble" src="svg/001-dribbble.svg" alt="dribbble">
                   </a>
                 </li>
                 <li class="social__item">
-                  <a class="social__link" href="#0">
+                  <a class="social__link" id="pinterest" href="#0">
                     <span class="visually-hidden">Pinterest</span>
-                    <img class="social__link-pinterest" src="svg/002-pinterest.svg" alt="pinterest">
                   </a>
                 </li>
                 <li class="social__item">
-                  <a class="social__link" href="#0">
+                  <a class="social__link" id="tumblr" href="#0">
                     <span class="visually-hidden">Tumblr</span>
-                    <img class="social__link-tumblr" src="svg/003-tumblr.svg" alt="tumblr">
                   </a>
                 </li>
               </ul>

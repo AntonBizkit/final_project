@@ -61,6 +61,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -334,10 +335,6 @@ a {
   object-position: center;
 }
 
-.small__text {
-  min-width: 181px;
-}
-
 .small__caption {
   margin-top: 4px;
   margin-bottom: 0;
@@ -496,7 +493,6 @@ a {
 .topic__item {
   padding-bottom: 15px;
   margin: 13px auto 0;
-  width: 272px;
   border-bottom: 1px solid #eeeeee;
 }
 
@@ -525,12 +521,12 @@ a {
   display: flex;
   flex-direction: column;
   max-width: 300px;
+  align-items: center;
 }
 
 .features {
   flex-grow: 1;
   box-sizing: border-box;
-  margin: -35px -23px 0;
   padding: 28px 19px;
   border: 3px solid #b59f5b;
 }
@@ -879,6 +875,7 @@ a {
 
   .row__post-info {
     padding: 30px 30px 0 28px;
+    width: 100%;
   }
 
   .post__caption {
@@ -931,12 +928,15 @@ a {
     margin: 26px 0 50px;
   }
 
-  .card:nth-child(odd) {
+  /* .card:nth-child(odd) {
     margin-right: 68px;
+  } */
+
+  .card {
+    max-width: 50%;
   }
 
   .features {
-    margin: -37px -20px 0;
     padding: 21px 20px 30px;
   }
 
@@ -1035,6 +1035,7 @@ a {
 
   .row__post-info {
     padding: 29px 23px 27px 14px;
+    width: 100%;
   }
 
   .post__caption {
@@ -1102,6 +1103,10 @@ a {
     padding: 0 14px;
   }
 
+  .topic {
+    width: 100%;
+  }
+
   .topic__list {
     margin-top: 26px;
   }
@@ -1120,6 +1125,10 @@ a {
 
   .field {
     width: 100%;
+  }
+
+  .card {
+    max-width: 100%;
   }
 
   .products__cards {
